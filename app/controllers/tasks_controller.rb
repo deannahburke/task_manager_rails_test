@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
     def index
-      @tasks = Task.all
+      @tasks = Task.all # lazy loading the tasks
     end
 
     def new
@@ -12,7 +12,8 @@ class TasksController < ApplicationController
       description: params[:description]
       })
 
-  task.save
+    task.save
+    @task = TaskPresenter.new(task)
 
   redirect_to '/tasks'
     end

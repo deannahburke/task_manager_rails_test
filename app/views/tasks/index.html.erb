@@ -1,6 +1,7 @@
 <h1>All Tasks</h1>
 
-<% @tasks.each do |task| %>
-    <h3><%= task.title %></h3>
-    <p><%= task.description %></p>
-  <% end %>
+<% @tasks.each do |t| %>
+  <% task = TaskPresenter.new(t) %>
+  <h3><%= task.formatted_title %></h3>
+  <p><%= task.description %></p>
+<% end %>
