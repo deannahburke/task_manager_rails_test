@@ -1,6 +1,10 @@
 class TasksController < ApplicationController
     def index
       @tasks = Task.all # lazy loading the tasks
+      respond_to do |format|
+        format.html
+        format.json { render json: @tasks }
+      end
     end
 
     def new
@@ -18,4 +22,4 @@ class TasksController < ApplicationController
   redirect_to '/tasks'
     end
 
-  end
+end
