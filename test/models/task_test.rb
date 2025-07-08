@@ -1,28 +1,27 @@
 require "test_helper"
 
 class TaskTest < ActiveSupport::TestCase
-  def setup 
+  def setup
     @task = Task.new(title: "Gardening", description: "Pull all weeds")
-  end 
+  end
 
   test "valid task" do
-    assert @task.valid? 
-   end
+    assert @task.valid?
+  end
 
-   test "invalid without title" do 
+  test "invalid without title" do
     @task = Task.new(description: "Pull all weeds")
     refute @task.valid?, "saved task without a title"
     assert_not_nil @task.errors[:title], "no validation error for title present"
-   end 
+  end
 
-   test "invalid without description" do
-    @task.description = nil 
-    refute @task.valid? 
+  test "invalid without description" do
+    @task.description = nil
+    refute @task.valid?
     assert_not_nil @task.errors[:description]
-   end
+  end
 
-   #test "foo" do 
-    #assert false, "Some error message"
-   #end 
+  # test "foo" do
+  # assert false, "Some error message"
+  # end
 end
-
