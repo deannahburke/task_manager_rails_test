@@ -20,8 +20,5 @@ class TaskTest < ActiveSupport::TestCase
     refute @task.valid?
     assert_not_nil @task.errors[:description]
   end
-
-  # test "foo" do
-  # assert false, "Some error message"
-  # end
+  
 end
