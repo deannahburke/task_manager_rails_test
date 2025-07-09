@@ -4,7 +4,7 @@
   <% task = TaskPresenter.new(t) %>
   <h3><%= task.formatted_title %></h3>
   <p><%= task.description %></p>
-  <a href="/tasks/<%= t.id  %>/edit">Edit</a>
+  <%= link_to "Edit task", edit_task_path(t.id) %>
   <form action="/tasks/<%= t.id %>" method="POST">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     <input type="hidden" name="_method" value="DELETE">

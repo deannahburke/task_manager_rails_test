@@ -5,6 +5,7 @@ class TaskPresenter
 
   def_delegator :@task, :title # delegate doesn't like two methods? Why, so weird
   def_delegator :@task, :description
+  def_delegator :@task, :id
 
   def initialize(task)
     @task = task
