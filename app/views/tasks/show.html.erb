@@ -1,4 +1,4 @@
 <h3><a href="/tasks">Task Index</a></h3>
 <h4><%= @task.title %></h4>
 <p><%= @task.description %></p>
-<a href="/tasks/<%= @id %>/edit">Edit this task</a>
+<%= link_to "Edit task", edit_task_path(@task.id) %>
